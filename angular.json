@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "jenkins-angular"
+    }
+  },
+  "defaultProject": "jenkins-angular",
+  "cli": {
+    "analytics": false
+  }
 }
