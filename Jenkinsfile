@@ -7,6 +7,11 @@ pipeline {
         }
     }
     stages {
+        stage('Cloning Git') {
+            steps {
+                git 'https://github.com/vinotht-okit/jenkins-angular.git'
+            }
+        }        
         stage('Build') {
             steps {
                 sh 'npm install'
