@@ -30,6 +30,11 @@ pipeline {
     // }
     agent { dockerfile true }
     stages {
+        stage('Cloning Git') {
+            steps {
+                git 'https://github.com/vinotht-okit/jenkins-angular.git'
+            }
+        }  
         stage('Test') {
             steps {
                 sh 'node --version'
