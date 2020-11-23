@@ -49,7 +49,7 @@ pipeline {
         }
         stage('Cleaning Containers') {
             steps {
-               sh "docker image prune -y"
+               sh "docker image prune"
             }
         }
     }
