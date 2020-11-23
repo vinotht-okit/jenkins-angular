@@ -18,7 +18,7 @@ RUN npm run build
 
 # stage 2
 FROM httpd:2.4.41-alpine
-COPY --from=build-step-0 /app/dist/ok4sign-angular /usr/local/apache2/htdocs/
+COPY --from=build-step-0 /app/dist/jenkins-angular /usr/local/apache2/htdocs/
 
 # # using nginx server
 # # stage 1
