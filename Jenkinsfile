@@ -37,7 +37,7 @@ pipeline {
         }  
         stage('Test') {
             steps {
-                sh 'docker-compose --version'
+                sh 'docker ps'
             }
         }
     }
