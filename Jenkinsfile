@@ -5,12 +5,12 @@ pipeline {
     //     registryCredential = 'docker-hub-credentials'
     //     dockerImage = ''
     // }
-    agent {
-        docker {
-            image 'node:12.17.0-alpine3.11'
-            args '-p 3000:3000'
-        }
-    }
+    // agent {
+    //     docker {
+    //         image 'node:12.17.0-alpine3.11'
+    //         args '-p 3000:3000'
+    //     }
+    // }
     // stages {
     //     stage('Cloning Git') {
     //         steps {
@@ -29,15 +29,16 @@ pipeline {
     //     }
     // }
     // agent { dockerfile true }
+    agent any
     stages {
         stage('Cloning Git') {
             steps {
                 git 'https://github.com/vinotht-okit/jenkins-angular.git'
             }
         }  
-        stage('Test') {
+        stage('docker-compose') {
             steps {
-                sh 'docker ps'
+               sh "docker-compose build"
             }
         }
     }
