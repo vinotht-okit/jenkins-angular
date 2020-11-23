@@ -36,9 +36,14 @@ pipeline {
                 git 'https://github.com/vinotht-okit/jenkins-angular.git'
             }
         }  
-        stage('docker-compose') {
+        stage('Building Image') {
             steps {
-               sh "docker-compose build"
+               sh "docker-compose build --no-cache"
+            }
+        }
+        stage('Launching Container') {
+            steps {
+               sh "docker-compose up -d"
             }
         }
     }
