@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  app_jenkins_angular:
+    container_name: app_jenkins_angular
+    build: .
+    restart: unless-stopped
+    networks:
+      - ok4s_net
+
+networks:
+  ok4s_net:
+    external: true
