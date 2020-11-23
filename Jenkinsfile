@@ -28,7 +28,7 @@ pipeline {
     //         }
     //     }
     // }
-    agent { dockerfile true }
+    // agent { dockerfile true }
     stages {
         stage('Cloning Git') {
             steps {
@@ -37,8 +37,7 @@ pipeline {
         }  
         stage('Test') {
             steps {
-                sh 'node --version'
-                sh 'svn --version'
+                sh 'docker-compose --version'
             }
         }
     }
