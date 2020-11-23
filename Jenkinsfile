@@ -5,12 +5,12 @@ pipeline {
     //     registryCredential = 'docker-hub-credentials'
     //     dockerImage = ''
     // }
-    // agent {
-    //     docker {
-    //         image 'node:12.17.0-alpine3.11'
-    //         args '-p 3000:3000'
-    //     }
-    // }
+    agent {
+        docker {
+            image 'node:12.17.0-alpine3.11'
+            args '-p 3000:3000'
+        }
+    }
     // stages {
     //     stage('Cloning Git') {
     //         steps {
