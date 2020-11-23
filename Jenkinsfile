@@ -38,7 +38,7 @@ pipeline {
         }  
         stage('Building Image') {
             steps {
-               sh "docker-compose build --tag bulletinboard:1.0 --no-cache"
+               sh "docker-compose build --no-cache"
             }
         }
         stage('Launching Container') {

@@ -4,6 +4,7 @@ services:
   app_jenkins_angular:
     container_name: app_jenkins_angular
     build: .
+    image: app_jenkins_angular:1.0.1
     restart: unless-stopped
     networks:
       - ok4s_net
