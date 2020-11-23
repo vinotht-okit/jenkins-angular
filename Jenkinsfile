@@ -47,6 +47,11 @@ pipeline {
                sh "docker-compose up -d"
             }
         }
+        stage('Cleaning Containers') {
+            steps {
+               sh "docker image prune -y"
+            }
+        }
     }
 
 }
